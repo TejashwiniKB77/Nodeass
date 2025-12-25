@@ -1,42 +1,72 @@
 Static Image Serving API
-This assignment extends an existing Node.js and Express backend by adding a Static Image Serving API. The API enables clients to retrieve image files stored on the server using HTTP requests. It follows RESTful principles and ensures secure file handling, correct response headers, and proper error handling.
+This project extends an existing Node.js and Express backend by adding a Static Image Serving API.
+The API allows users to fetch image files stored on the server using HTTP requests.
+It includes proper error handling and secure file access.
 
 Objectives
 Extend an existing Node.js + Express project
-Serve static image files via an API
-Maintain existing middleware and configuration
-Handle invalid and missing image requests securely
-Test functionality using browser and Postman
-Structure
-backend/ ├── server.js ├── routes/ │ └── imageRoutes.js ├── images/ │ ├── img1.jpg │ ├── img2.png │ ├── img3.jpeg │ ├── img4.jpg │ ├── img5.png │ ├── img6.jpeg │ ├── img7.jpg │ ├── img8.png │ ├── img9.jpeg │ ├── img10.jpg
+Serve image files using an API
+Handle missing and invalid image requests
 
-Image Storage Images are stored in a dedicated /images directory. A minimum of 10 image files are included. Supported formats include JPG, JPEG, and PNG.
+Test the API using Browser and Postman
+Project Structure
+backend/
+├── server.js
+├── routes/
+│   └── imageRoutes.js
+├── images/
+│   ├── img1.jpg
+│   ├── img2.png
+│   ├── img3.jpeg
+│   ├── img4.jpg
+│   ├── img5.png
+│   ├── img6.jpeg
+│   ├── img7.jpg
+│   ├── img8.png
+│   ├── img9.jpeg
+│   └── img10.jpg
 
-API Endpoint Details -GET /images/:imageName
+Image Storage
+Images are stored in the /images folder
+Minimum of 10 images included
+Supported formats: JPG, JPEG, PNG
 
-Description: Retrieves and serves an image file from the server.
+API Endpoint
+GET /images/:imageName
 
-Parameters: imageName – Name of the image file including extension
+Description:
+Returns the requested image from the server.
+Success Response:
+Status Code: 200
 
-Success Response: Status Code: 200 OK Response: Image file with appropriate Content-Type header
+Image file is returned
+Error Response:
 
-Error Responses: 404 Not Found – Image does not exist 400 Bad Request – Invalid file name
+404 – Image not found
+400 – Invalid file name
 
-Sample Requests Browser: http://localhost:5000/images/image1.jpg
+Sample Requests
 
-Postman: GET http://localhost:5000/images/image5.png
+Browser:
 
-Missing Image: http://localhost:5000/images/unknown.jpg
+http://localhost:5000/images/ad1.jpeg
 
-Security Measures
 
-Prevents directory traversal attacks
-Validates file existence before response
-Rejects invalid file names
+Postman:
+
+GET http://localhost:5000/images/ad1.jpeg
+
 Execution Steps
 
-Navigate to backend folder
+Open the backend folder
+
 Run npm install
-Start server using node server.js
-Access API using browser or Postman
-Conclusion The Static Image Serving API has been successfully implemented and tested. The project meets all assignment requirements and follows best practices.
+
+Start the server using node server.js
+
+Test the API in browser or Postman
+
+Conclusion
+
+The Static Image Serving API is implemented successfully.
+It meets all assignment requirements and works as expected.
